@@ -21,7 +21,7 @@ create table instuicoes(
 
 create table voluntario(
     IDVoluntario int,
-    cpf varchar(14),
+    UNIQUE cpf varchar(14),
     idade int,
     nome varchar(20),
     sobrenome varchar(20),
@@ -57,10 +57,10 @@ create table areas(
 
 create table turnos(
     IDturno int,
-    IDVoluntario int,
+    IDacao int,
     turno varchar(200),
     CONSTRAINT pk_turnos PRIMARY KEY(IDturno),
-    CONSTRAINT fk_turnos FOREIGN KEY(IDVoluntario) REFERENCES voluntario
+    CONSTRAINT fk_turnos FOREIGN KEY(IDacao) REFERENCES acoes
 );
 
 create table experiencias(
